@@ -1,4 +1,11 @@
 #!/bin/bash
-`chdman extractcd -i "${1}" -o "${1/.chd/.cue}" -ob "${1/.chd/.iso}" 1>/dev/null`
-`rm "${1/.chd/.cue}"` 
-echo ""
+# chdman addon by assking.sie
+# made for easy unpack PS2 roms in termux
+# EXAMPLE: "unchd <rom.chd>"
+
+chdman extractcd -i "${1}" -o "${1/.chd/.cue}" -ob "${1/.chd/.iso}"
+
+#remove this or comment if you need .cue file"
+echo "Removing file: \"${1/.chd/.cue}\""
+rm "${1/.chd/.cue}"
+echo "Done!"
